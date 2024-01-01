@@ -1,6 +1,1 @@
 streamlit>=0.69
-requests>=2.26.0
-streamlit-lottie>=0.0.5
-setuptools
-wheel
-twine
