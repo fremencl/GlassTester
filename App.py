@@ -2,7 +2,7 @@
 import streamlit as st
 
 # Ruta a los archivos de imagen en tu carpeta 'lottiefiles'
-ruta_imagen = "./lottiefiles/octica.png"
+ruta_imagen = "./lottiefiles/Octica.png"
 
 st.set_page_config(
     page_title="Optica Digital",
