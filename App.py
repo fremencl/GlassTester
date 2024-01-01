@@ -1,13 +1,8 @@
-import json
-import time
-
-import requests
+#import requests
 import streamlit as st
-#from streamlit_lottie import st_lottie
-#from streamlit_lottie import st_lottie_spinner
 
-# Rutas a los archivos de imagen en tu carpeta 'lottiefiles'
-url_imagen = "./lottiefiles/octica.png"
+# Ruta a los archivos de imagen en tu carpeta 'lottiefiles'
+ruta_imagen = "./lottiefiles/octica.png"
 
 st.set_page_config(
     page_title="Optica Digital",
@@ -23,22 +18,18 @@ Ahora puedes ver cómo te quedarán este modelo de lentes, si no te gustan no es
 
 with st.container():
     st.write("---")
-    left_column, right_column = st.columns(2)
-    with left_column:
-        st.header("Mira la Cámara")
-    with right_column:
-        st.image(url_imagen, use_column_width=True)
+    st.header("Mira la Cámara")
+    foto = st.camera_input("Tomemos una linda foto")
+    if foto:
+        st.success("¡Tu foto se cargó correctamente!")
+        # Aquí puedes agregar código adicional para procesar la foto si es necesario
 
 with st.container():
     st.write("--")
     st.header("Te gustó como te ves con estos lentes?")
-    image_column, text_column = st.columns((1, 2))
-    with image_column:
-        st.image(url_imagen, use_column_width=True)
+    text_column, image_column = st.columns((1, 2))  # Asegúrate de que las columnas estén en el orden correcto
     with text_column:
-        st.write(
-            """
-            ECONOPTICA - Somos tu óptica en línea con los mejores precios
-            """
-        )
+        st.write("ECONOPTICA - Somos tu óptica en línea con los mejores precios")
         st.markdown("[Nuestra Tienda web...](https:///juguetesingenium.cl)")
+    with image_column:
+        st.image(ruta_imagen, use_column_width=True)
