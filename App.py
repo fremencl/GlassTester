@@ -3,15 +3,10 @@ import time
 
 import requests
 import streamlit as st
-from streamlit_lottie import st_lottie
+#from streamlit_lottie import st_lottie
 #from streamlit_lottie import st_lottie_spinner
 
-def load_lottiefile(filepath: str):
-    with open(filepath, "r") as f:
-        return json.load(f)
-
-# Rutas a los archivos Lottie y de imagen en tu carpeta 'lottiefiles'
-lottie_lentes = load_lottiefile("./lottiefiles/animalentes.json")
+# Rutas a los archivos de imagen en tu carpeta 'lottiefiles'
 url_imagen = "./lottiefiles/octica.png"
 
 st.set_page_config(
@@ -32,7 +27,7 @@ with st.container():
     with left_column:
         st.header("Mira la Cámara")
     with right_column:
-        st_lottie(lottie_lentes, height=300, key="lentes")
+        st.image(url_imagen, use_column_width=True)
 
 with st.container():
     st.write("--")
