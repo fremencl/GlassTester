@@ -36,7 +36,7 @@ with st.container():
 with st.container():
   st.write("--")
   st.header("Te gustó como te ves con estos lentes?")
-    image_column, text_column = st.columns((1, 2))
+  image_column, text_column = st.columns((1, 2))
   with image_column:
     st.image(url_imagen, use_column_width=True)
   with text_column:
